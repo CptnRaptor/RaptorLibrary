@@ -28,8 +28,8 @@ namespace RaptorLibrary
             if (!Game.IsLoading && Game.Player != null && Game.Player.CanControlCharacter)
             {
                 Tick -= ModLoaded;
-                LoggingTools.TextPlayerMessage(ModName, pageName, "onTick", $"{ModName} {Version} by {Developer} Loaded");
-                LoggingTools.WriteMessageToDisk(ModName, $"{ModName} {Version} by {Developer} Loaded");
+                //LoggingTools.TextPlayerMessage(ModName, pageName, "onTick", $"{ModName} {Version} by {Developer} Loaded");
+                //LoggingTools.WriteMessageToDisk(ModName, $"{ModName} {Version} by {Developer} Loaded");
             }
         }
     }

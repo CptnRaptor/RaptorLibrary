@@ -37,7 +37,7 @@ namespace RaptorLibrary
 		/// <param name="friendlyError"></param>
 		public static void RecordError(Exception ex, string modName, string pageName, string methodName, string friendlyError)
 		{
-			LogError(1, modName, pageName, methodName, ex.Message);
+			LogError(1, modName, pageName, methodName, friendlyError, ex.Message);
 			string bugstarsMessage = $"There was an error in the {modName} mod, {pageName}.{methodName}(), \"{friendlyError}\".";
 			TextPlayerMessage(modName, pageName, methodName, bugstarsMessage, true);
 		}
@@ -49,7 +49,7 @@ namespace RaptorLibrary
 		/// <param name="pageName"></param>
 		/// <param name="pageMethod"></param>
 		/// <param name="technicalError"></param>
-		public static void LogError(int category, string modName, string pageName, string pageMethod, string technicalError)
+		public static void LogError(int category, string modName, string pageName, string pageMethod, string friendlyError, string technicalError)
 		{
 			string fncName = "LogError";
 			try
@@ -62,7 +62,7 @@ namespace RaptorLibrary
 					default:
 					case (int)Enums.ErrorType.UNKNOWN: errorType = "Unknown"; break;
 				}
-				string message = $"Page: {pageName}\tMethod: {pageMethod}\tError: {technicalError}\t\t({errorType.ToUpper()})";
+				string message = $"Page: {pageName}\tMethod: {pageMethod}\tError: {technicalError}\t\t({errorType.ToUpper()})\t\"{friendlyError}\"";
 				WriteMessageToDisk(modName, message);
 			}
 			catch (Exception ex)
@@ -89,7 +89,7 @@ namespace RaptorLibrary
 				DateTime now = DateTime.Now;
 				string year = now.Year.ToString();
 				string month = now.Month.ToString().PadLeft(2, '0');
-				string day = now.Month.ToString().PadLeft(2, '0');
+				string day = now.Day.ToString().PadLeft(2, '0');
 				string fileName = $"{year}-{month}-{day}.log";
 				string filePath = Environment.CurrentDirectory + "/scripts/RaptorLibraryLogs";
 
