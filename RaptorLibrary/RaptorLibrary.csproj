@@ -49,6 +49,7 @@
     <Compile Include="Functions\UtilityFunctions.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Statics\Constants.cs" />
     <Compile Include="Statics\Enums.cs" />
   </ItemGroup>
   <ItemGroup />

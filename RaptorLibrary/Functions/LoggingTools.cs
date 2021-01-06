@@ -44,7 +44,7 @@ namespace RaptorLibrary
 		/// <summary>
 		/// Safely logs an error to the disk, logging a LoggingTools error if it fails to log the input error.
 		/// </summary>
-		/// <param name="category">Success = 0, Error = 1, UNKNOWN = 2</param>
+		/// <param name="category">Success = 0, Error = 1, UNKNOWN = any other number</param>
 		/// <param name="modName"></param>
 		/// <param name="pageName"></param>
 		/// <param name="pageMethod"></param>
